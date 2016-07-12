@@ -1,0 +1,15 @@
+{
+  "name": "node-i18n",
+  "version": "0.1.0",
+  "description": "Internationalization (i18n) library for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive -u tdd lib/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/org-ids/node-i18n.git"
+  },
+  "author": "Curtis d'Entremont <curtispd@ca.ibm.com>",
+  "license": "IBM"
+}
