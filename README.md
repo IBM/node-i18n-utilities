@@ -44,7 +44,7 @@ msgs.get('key');
 // specific locale (French)
 msgs.get('key', 'fr')
 
-// use the preferred locale of the incoming express request
+// use the preferred locale of the incoming Express request
 msgs.get('key', req);
 ```
 
@@ -67,23 +67,23 @@ Where the properties files might look as follows:
 
 msgs.properties:
 ```
-hello=Hello!
+hello = Hello!
 ```
 
 msgs_fr.properties:
 ```
-hello=Bonjour!
+hello = Bonjour!
 ```
 
 The app will respond in English or in French depending on the language preference specified in the request via the `Accept-Language` header, which browsers will send based on their language settings.
 
 #### Strings with arguments
 
-Sometimes you need to produce a translated string that has a value substituted into it, e.g. _"Are you sure you want to delete the project Foo?"_ Here _Foo_ is the name of the project. You should not make assumptions about where a word appears in a sentence, e.g. don't just concatenate msgs.get('confirm.delete') + projectName, because in other languages the sentence structure is different. Instead, you should inject variables into the string:
+Sometimes you need to produce a translated string that has a value substituted into it, e.g. _"Are you sure you want to delete the project Foo?"_ Here _Foo_ is the name of the project. You should not make assumptions about where a word appears in a sentence, e.g. don't just concatenate `msgs.get('confirm.delete') + projectName`, because in other languages the sentence structure is different. Instead, you should inject variables into the string:
 
 msgs.properties:
 ```
-confirm.delete=Are you sure you want to delete the project {0}?
+confirm.delete = Are you sure you want to delete the project {0}?
 ```
 
 This way the translator will move the variable to the right location for that language. You can then provide an array of values to inject into a string:
