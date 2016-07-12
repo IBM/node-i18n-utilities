@@ -5,12 +5,13 @@ and resolving to the right translation.
 
 ## Usage
 
-#### Externalize user-visible strings into .properties files ([Java Property Resource Bundle](https://en.wikipedia.org/wiki/.properties) format).
+#### Externalize user-visible strings into .properties files
 
-The default locale (usually en) should be in the main file, e.g. `msgs.properties`.
-Translations are placed in files corresponding to their locale and country codes,
-e.g. `msgs_ja.properties` for the Japanese translation, and `msgs_pt_BR.properties` for
-the Brazilian Portuguese translation. They must be in the same directory.
+All user-visible strings should be externalized into .properties files ([Java Property Resource Bundle](https://en.wikipedia.org/wiki/.properties) format) so they can be translated rather than
+hardcoded in the app for a specific language. The default locale (usually en) should be in the
+main file, e.g. `msgs.properties`. Translations are placed in files corresponding to their locale
+and country codes, e.g. `msgs_ja.properties` for the Japanese translation, and `msgs_pt_BR.properties`
+for the Brazilian Portuguese translation. They must be in the same directory.
 
 e.g.
 * `msgs.properties`         _original English strings_
@@ -86,3 +87,22 @@ msgs.get('confirm.delete', [projectName], req);
 ```
 
 The first argument of the array will match {0}, the second {1}, and so on.
+
+### Locale resolution
+
+We can't always get a perfect locale match for a given request, e.g. we may not have a French Canadian translation, but we have a French one. The rules for resolving a locale into a suitable translation are:
+
+e.g. for bundle `msgs.properties`, locale `fr_CA`
+
+1. Try `msgs_fr_CA.properties` (perfect match)
+2. If not found, try `msgs_fr.properties` (French)
+3. If not found, try `msgs.properties` (default, English)
+
+For resolving messages based on the preferences of the incoming request (via the `Accept-Language` header), only the first language (most preferred) is considered.
+
+You can get the preferred locale of a request as follows:
+```
+var i18n = require('i18n');
+...
+i18n.locale(req);
+```
