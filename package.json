@@ -1,7 +1,7 @@
 {
   "name": "node-i18n",
   "version": "0.1.0",
-  "description": "Internationalization (i18n) library for node.js",
+  "description": "Internationalization (i18n) library for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive -u tdd lib/test"
