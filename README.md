@@ -3,6 +3,12 @@
 A library for translating apps in Node.js, by externalizing strings into .properties files
 and resolving to the right translation.
 
+## Installation
+
+```
+npm install git+https://github.ibm.com/org-ids/node-i18n#<LatestTag> --save
+```
+
 ## Usage
 
 #### Externalize user-visible strings into .properties files
