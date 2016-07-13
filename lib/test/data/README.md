@@ -1,0 +1,1 @@
+Test file to ensure that i18n doesn't choke on non-properties files.
