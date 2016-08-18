@@ -140,7 +140,8 @@ You can resolve the object to a specific locale via:
 var resolvedObj = i18n.resolveLocale(obj, 'ja');
 ```
 
-which will substitute the translation into the main structure of the document, and strip the extra translation info out. e.g.
+You can also supply an express request instead of the locale, and it will use the preferred language of the request.
+This will substitute the translation into the main structure of the document, and strip the extra translation info out. e.g.
 
 ```
 {
