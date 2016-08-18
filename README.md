@@ -112,3 +112,41 @@ var i18n = require('i18n');
 ...
 i18n.locale(req);
 ```
+
+### Resolving objects to a locale
+
+Given an object of the form:
+```
+var obj = {
+  prop1: "value",
+  prop2: { ... }
+  default_locale: "en",
+  locales: {
+    "fr": {
+       prop1: "valeur",
+       prop2: { ... }
+    }
+    "ja": {
+       prop1: "値",
+       prop2: { ... }
+    }
+  }
+};
+```
+
+You can resolve the object to a specific locale via:
+
+```
+var resolvedObj = i18n.resolveLocale(obj, 'ja');
+```
+
+which will substitute the translation into the main structure of the document, and strip the extra translation info out. e.g.
+
+```
+{
+  prop1: "値",
+  prop2: { ... }
+}
+```
+
+
