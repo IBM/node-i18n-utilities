@@ -23,7 +23,7 @@ Signed-off-by: John Doe <john.doe@example.org>
 ## Installation
 
 ```
-npm i node-i18n-util
+npm i node-i18n-util -S
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ As a developer, you would typically write the main file (e.g. here, `msgs.proper
 
 #### Load strings from properties files
 
-From your code, you then add requires to the properties files, a loader for these files is registered in the `i18n` module, so you must require it before any properties files.
+From your code, you then add requires to the properties files, a loader for these files is registered in the `node-i18n-util` module, so you must require it before any properties files.
 
 ```
 // require i18n before any properties files
