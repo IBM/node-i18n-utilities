@@ -50,7 +50,7 @@ From your code, you then add requires to the properties files, a loader for thes
 
 ```
 // require i18n before any properties files
-require('i18n');
+require('node-i18n-util');
 
 // always require the main file, not a specific translation
 var msgs = require('./msgs.properties');
@@ -72,7 +72,7 @@ Normally, when servicing requests where you return strings that may be visible t
 ```
 var express = require('express');
 var app = express();
-var i18n = require('i18n');
+var i18n = require('node-i18n-util');
 var msgs = require('./msgs.properties);
 
 app.get('/', function (req, res) {
@@ -125,7 +125,7 @@ For resolving messages based on the preferences of the incoming request (via the
 
 You can get the preferred locale of a request as follows:
 ```
-var i18n = require('i18n');
+var i18n = require('node-i18n-util');
 ...
 i18n.locale(req);
 ```
