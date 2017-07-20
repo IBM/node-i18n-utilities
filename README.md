@@ -3,10 +3,27 @@
 A library for translating apps in Node.js, by externalizing strings into .properties files
 and resolving to the right translation.
 
+This project originated out of [Bluemix Continuous Delivery](https://bluemix.net/devops).
+
+This is one of hundreds of [IBM Open Source projects at GitHub](http://ibm.github.io).
+
+# License
+
+[The MIT License (MIT)](LICENSE.txt)
+
+# Contributing
+
+Contributions are welcome via Pull Requests. Please submit your very first Pull Request against the [Developer's Certificate of Origin](DCO.txt), adding a line like the following to the end of the file... using your name and email address of course!
+
+Note that all contributions *must* be submitted through pull requests and have to pass the Travis Status Checks in order for code to be merged into master.
+
+Signed-off-by: John Doe <john.doe@example.org>
+
+
 ## Installation
 
 ```
-npm install git+https://github.ibm.com/org-ids/node-i18n#<LatestTag> --save
+npm i node-i18n-util
 ```
 
 ## Usage
