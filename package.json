@@ -1,6 +1,6 @@
 {
   "name": "node-i18n-util",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Internationalization (i18n) library for Node.js",
   "main": "index.js",
   "scripts": {
