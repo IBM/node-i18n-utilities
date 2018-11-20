@@ -130,6 +130,14 @@ var i18n = require('node-i18n-util');
 i18n.locale(req);
 ```
 
+You can also determine which translation a request or locale resolved to for a given message bundle. For example, if a request asking for `fr-CA` resolves to a `fr` translation, you can get the resolved locale (in this case `fr`) which is useful for indicating the actual (not requested) language of a page, e.g. `<html lang="fr">`
+```
+var i18n = require('node-i18n-util');
+var msgs = require('./msgs.properties);
+...
+msgs.locale(req);
+```
+
 ### Resolving objects to a locale
 
 Given an object of the form:
